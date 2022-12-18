@@ -1,8 +1,6 @@
 name: Build image
 
-on:
-  push:
-    branches: ["!main"]
+on: push
 
 env:
   REGISTRY: ghcr.io
