@@ -1,7 +1,6 @@
 name: Build image
 
-on: push
-
+on: "push"
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -36,4 +35,4 @@ jobs:
           context: .
           push: false
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          labels: ${{ steps.meta.outputs.labels }} latest
