@@ -1,7 +1,6 @@
 FROM mongo:6.0-focal
 
-WORKDIR /
-RUN echo "rs.initiate();" > /docker-entrypoint-initdb.d/replica-init.js
+# Add initialization script
+ADD init.js /docker-entrypoint-initdb.d/init.js
+# Add arguments to mongod entrypoint to start in replicaset mode
 CMD ["--replSet", "rs0"]
-
-# ENTRYPOINT [ "/entrypoint.sh" ]
